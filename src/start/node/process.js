@@ -1,6 +1,9 @@
 var http = require('http');
 var url = require('url');
 
+var appInsights = require("applicationinsights");
+appInsights.setup("05e694d4-f1c7-4716-8748-d9b56361e24b").start();
+
 http.createServer(function (req, res) {
     res.writeHead(200, { 'Content-Type': 'text/html' });
     var url_parts = url.parse(req.url, true);
